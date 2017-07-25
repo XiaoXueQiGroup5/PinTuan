@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>注册 -- 拼团 in SCU</title>
+<link rel="stylesheet" type="text/css" href="css/register.css">
+</head>
+
+
+<body>
+	<!--标题栏-->
+	<div class="topleft">
+		<img src="images/pintuan.PNG" width="125" height="50"/>
+	</div>
+	<div class="topright">
+		<a href="index.html">首页</a>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="javascript:showDivFun()"><font size=2 color=slategrey>联系我们</font></a>
+	</div>
+	<div class="line"></div>
+	<!--联系我们-->
+	<div id="connectDialog" class="connectDialog">
+		<div class="closeConnectDialog1" align="right" onclick="closeDivFun()">
+			<span class="closeConnectDialog2">×</span>
+		</div>
+		<p style="text-align: center;">联系我们</p>
+		<p style="text-indent:2em;">若您有任何问题或建议，可以用以下方式联系我们：</p>
+		<p style="text-indent:2em;">电话：17780731453</p>
+		<p style="text-indent:2em;">邮箱：1272660474@qq.com</p>
+		<p style="text-align:right;">拼团 in SCU&nbsp;&nbsp;</p>
+	</div>
+	<script src="js/connectWithUs.js"></script>
+
+	
+	<div class="register">
+		<form name="form1" method="post" action="2.html" onsubmit="return check()" style="width: 1000px;"> 
+			<table border="1"> 
+				<tr>
+					<td>用户名：</td>
+					<td><input id="text1" type="text" name="text1" onblur="check()"><div id="div1" style="display:inline"></div></td> 
+				</tr> 
+				<tr>
+					<td>密码：</td> 
+					<td><input id="text2" type="password" name="text2" onblur="check()"><div id="div2" style="display:inline"></div></td> 
+				</tr> 
+				<tr>
+					<td>确认密码：</td>
+					<td><input id="text3" type="password" name="text3" onblur="check()"><div id="div3" style="display:inline"></div></td> 
+				</tr>
+				<tr>
+					<td>邮件地址：</td> 
+					<td><input id="text4" type="text" name="text4" onblur="check()"><div id="div4" style="display:inline"></div></td> 
+				</tr>
+				<tr>
+					<td>手机号：</td> 
+					<td><input id="text5" type="text" name="text5" onblur="check()"><div id="div5" style="display:inline"></div></td>
+				</tr>
+				<tr>
+					<td>性别：</td>
+					<td align="center"><input id="" type="radio" name="sex" value="M">男&nbsp;&nbsp;&nbsp;<input id="" type="radio" name="sex" value="F" checked="checked">女<div id="div6" style="display:inline"></td>
+				</tr>
+				<tr align="center">
+					<td></td>
+					<td align="center"><input type="submit" value="立即注册" name="text6" style="width:100%;background-color: lightblue;"></td>
+				</tr>
+			</table>
+		</form> 
+	</div>
+	
+
+    <script src="js/register.js"></script> 
+
+
+
+    
+    
+</body>
+</html>

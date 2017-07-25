@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>拼团 in SCU</title>
+<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+
+
+<body>
+	<!--标题栏-->
+	<div class="topleft">
+		<img src="images/pintuan.PNG" width="125" height="50"/>
+	</div>
+	<div class="topright">
+		<a href="index.html">首页</a>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="register.html">注册</a>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="javascript:showDivFun()"><font size=2 color=slategrey>联系我们</font></a>
+	</div>
+	<div class="line"></div>
+	<!--联系我们-->
+	<div id="connectDialog" class="connectDialog">
+		<div class="closeConnectDialog1" align="right" onclick="closeDivFun()">
+			<span class="closeConnectDialog2">×</span>
+		</div>
+		<p style="text-align: center;">联系我们</p>
+		<p style="text-indent:2em;">若您有任何问题或建议，可以用以下方式联系我们：</p>
+		<p style="text-indent:2em;">电话：17780731453</p>
+		<p style="text-indent:2em;">邮箱：1272660474@qq.com</p>
+		<p style="text-align:right;">拼团 in SCU&nbsp;&nbsp;</p>
+	</div>
+	<script src="js/connectWithUs.js"></script>
+
+
+
+	<!--登录框-->
+	<div class="signin">
+        <p class="signin-title">登录</p>
+        <div>
+            <form method="post" action="" onsubmit="return submitTest()">
+            	<div id="change_margin_1">
+                	<input class="user" type="text" name="user" placeholder="请输入用户名" onblur="oBlur_1()" onfocus="oFocus_1()">
+            	</div>
+            	<!-- input的value为空时弹出提醒 -->
+            	<p id="remind_1"></p>
+            	<div id="change_margin_2">
+                	<input class="password" type="password" name="password" placeholder="请输入密码" onblur="oBlur_2()" onfocus="oFocus_2()">
+            	</div>
+            	<!-- input的value为空时弹出提醒 -->
+            	<p id="remind_2"></p>
+                <div id="change_margin_3" class="submit">
+                    <input class="content-form-signup" type="submit" value="登录">
+                </div>
+           	</form>
+        </div>
+    </div>
+    <script src="js/login.js"></script>
+        
+        
+    <!--导航栏-->  
+    <div class="navigationBar">
+    	<table cellspacing="20">
+    		<tr><td>最新</td></tr>
+    		<tr><td>同行</td></tr>
+			<tr><td>购物</td></tr>
+			<tr><td>二手</td></tr>
+			<tr><td>组队</td></tr>
+		</table>
+    </div>    
+        
+    
+    
+</body>
+</html>
