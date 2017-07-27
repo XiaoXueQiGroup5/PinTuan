@@ -56,7 +56,7 @@
 			<p style="font-size: 24px;text-align: center;">${user.name }</p>
 	        <a href="userInfo.jsp"><font size=5>个人信息</font></a>
 	    	</br></br>
-	    	<a href="myPostList.jsp"><font size=5>我的发布</font></a>
+	    	<a href="${adminPath }/login?method=getMine&tId=${user.id}"><font size=5>我的发布</font></a>
 	    	</br></br>
 	    	<a href="post.jsp"><font size=5>发布信息</font></a>
 	   </div>
