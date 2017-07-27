@@ -1,0 +1,12 @@
+@CHARSET "UTF-8";
+
+	
+	.navigationBar{
+		position: fixed;
+		top: 100px;
+		left: 60px;
+		font-size: 30px;
+		font-family: "黑体";
+		z-index:998;
+	}
+	

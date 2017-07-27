@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>pintuan</name>
+	<name>users3</name>
 	<comment></comment>
 	<projects>
 	</projects>
 	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.wst.jsdt.core.javascriptValidator</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
 		<buildCommand>
 			<name>org.eclipse.jdt.core.javabuilder</name>
 			<arguments>
@@ -36,7 +41,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1500863271104</id>
+			<id>1501068391463</id>
 			<name></name>
 			<type>26</type>
 			<matcher>
@@ -45,7 +50,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1500863271110</id>
+			<id>1501068391469</id>
 			<name></name>
 			<type>26</type>
 			<matcher>

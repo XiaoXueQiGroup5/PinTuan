@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+
+	.signinState{
+		position: fixed;
+		top: 100px;
+		right: 10px;
+		font-size: 16px;
+		color: steelblue;
+		width: 15%;
+		text-align:center;
+		z-index:999;
+		
+	}
+	

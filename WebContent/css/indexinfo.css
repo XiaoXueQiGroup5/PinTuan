@@ -1,0 +1,12 @@
+@CHARSET "UTF-8";
+
+	
+	.indexinfo{
+		position: absolute;		
+		left: 38%;
+		margin-left: -200px;
+		font-size: 22px;
+		color: forestgreen;
+		border: 1px solid forestgreen;
+	}
+	

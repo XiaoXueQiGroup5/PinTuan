@@ -1,0 +1,69 @@
+@CHARSET "UTF-8";
+
+	a:link {
+ 		text-decoration: none;
+ 		color: black;
+	}
+	a:visited {
+		text-decoration: none;
+		color: black;
+	}
+	a:hover {
+ 		text-decoration: none;
+ 		color: black;
+	}
+	a:active {
+ 		text-decoration: none;
+ 		color: black;
+	}
+	
+	.topleft{
+		position: absolute;
+		top: 10px;
+		left: 80px;
+	}
+	.topright{
+		position: absolute;
+		top: 30px;
+		right: 80px;
+		font-size: 20px;
+	}
+
+	.line{
+		position: absolute;
+		top:62px;
+		border-bottom: 1px solid lightseagreen;
+		width: 100%;
+	}
+	
+	.connectDialog {
+		display:none;
+		z-index:999;
+		position: fixed;
+		font-size:16px;
+		width:400px;
+		height:200px;
+		top: 200px;
+		left: 50%;
+		margin-left:-200px;
+		border: 1px solid lightseagreen;
+		background-color: floralwhite;
+	}
+	.closeConnectDialog1{
+		padding:2px;
+		z-index:2000;
+		font-size:12px;
+		cursor:pointer;
+		position:absolute;
+		right:0;
+	}
+	.closeConnectDialog2{
+		border:1px solid #000;
+		width:12px;
+		height:12px;
+		line-height:12px;
+		text-align:center;
+		display:block;
+		background-color:#FFFFFF;
+		left:-20px;
+	}

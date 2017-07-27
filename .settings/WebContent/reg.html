@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p>请注册</p>
+	<form action="RegServlet" method="post">
+		Name:<input type="text" name="name"><br>
+		Pwd:<input type="password" name="pwd"><br>
+		Pwd2:<input type="password" name="pwd2"><br>
+		Sex:<input type="radio" name="sex" checked="checked" value="1">男
+		<input type="radio" name="sex" value="0">女<br>
+		<input type="button" onclick="chk();" value="注册">
+		<a href="index.html">返回</a>
+	</form>
+</body>
+<script type="text/javascript">
+	function chk(){
+		var p1 = document.getElementsByName("pwd")[0].value;
+		var p2 = document.getElementsByName("pwd2")[0].value;
+		if(p1!=p2){
+			alert('两次密码不一样');
+			return ;
+		}
+		//提交
+		document.forms[0].submit();
+	}
+	
+</script>
+</html>
