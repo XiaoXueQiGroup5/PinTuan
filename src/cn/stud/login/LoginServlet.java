@@ -33,9 +33,43 @@ public class LoginServlet extends HttpServlet {
 			update(request, response,out);
 		}else if ("postList".equals(method)) {
 			postList(request, response,out);
+		}else if ("getMine".equals(method)) {
+			getMine(request, response,out);
+		}else if("delPost".equals(method)){
+			delPost(request, response,out);
 		}
 		
 	}
+	
+	
+	private void delPost(HttpServletRequest request, HttpServletResponse response, PrintWriter out) throws ServletException, IOException {
+		String id = request.getParameter("id");
+		UpLoadDao upLoadDao = new UpLoadDao();
+		try {
+			upLoadDao.delete(id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		User user = (User) request.getSession().getAttribute("user");
+		List<PostBean> list = upLoadDao.getMine(user.getId());
+		for (PostBean postBean : list) {
+			System.err.println(postBean.getPTitle());
+		}
+		request.setAttribute("postList", list);
+		request.getRequestDispatcher("/myPostList.jsp").forward(request, response);
+	}
+
+	private void getMine(HttpServletRequest request, HttpServletResponse response, PrintWriter out) throws ServletException, IOException {
+		String tId = request.getParameter("tId");
+		UpLoadDao upLoadDao = new UpLoadDao();
+		List<PostBean> list = upLoadDao.getMine(tId);
+		for (PostBean postBean : list) {
+			System.err.println(postBean.getPTitle());
+		}
+		request.setAttribute("postList", list);
+		request.getRequestDispatcher("/myPostList.jsp").forward(request, response);
+	}
+
 	
 	private void postList(HttpServletRequest request, HttpServletResponse response, PrintWriter out)throws ServletException, IOException {
 		String tag = request.getParameter("tag");

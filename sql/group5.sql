@@ -1,15 +1,22 @@
-/*
-MySQL Data Transfer
-Source Host: localhost
-Source Database: xiaoxueqi
-Target Host: localhost
-Target Database: xiaoxueqi
-Date: 2017-07-27 1:39:24
+﻿/*
+Navicat MySQL Data Transfer
+
+Source Server         : localhost_3306
+Source Server Version : 50621
+Source Host           : localhost:3306
+Source Database       : group5
+
+Target Server Type    : MYSQL
+Target Server Version : 50621
+File Encoding         : 65001
+
+Date: 2017-07-28 11:56:03
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
 -- ----------------------------
--- Table structure for account
+-- Table structure for `account`
 -- ----------------------------
 DROP TABLE IF EXISTS `account`;
 CREATE TABLE `account` (
@@ -22,10 +29,14 @@ CREATE TABLE `account` (
   PRIMARY KEY (`A_id`),
   UNIQUE KEY `A_id` (`A_id`),
   UNIQUE KEY `A_name` (`A_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for picture
+-- Records of account
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `picture`
 -- ----------------------------
 DROP TABLE IF EXISTS `picture`;
 CREATE TABLE `picture` (
@@ -36,7 +47,11 @@ CREATE TABLE `picture` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for post
+-- Records of picture
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `post`
 -- ----------------------------
 DROP TABLE IF EXISTS `post`;
 CREATE TABLE `post` (
@@ -48,12 +63,16 @@ CREATE TABLE `post` (
   `P_tag2` varchar(64) DEFAULT NULL,
   `P_title` varchar(64) DEFAULT NULL,
   `P_description` varchar(2000) DEFAULT NULL,
-  `Pic_url` varchar(1000) DEFAULT NULL,
+  `Pic_url` varchar(1000) DEFAULT 'noPic',
   PRIMARY KEY (`A_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for publish_info
+-- Records of post
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `publish_info`
 -- ----------------------------
 DROP TABLE IF EXISTS `publish_info`;
 CREATE TABLE `publish_info` (
@@ -76,7 +95,11 @@ CREATE TABLE `publish_info` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for type
+-- Records of publish_info
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `type`
 -- ----------------------------
 DROP TABLE IF EXISTS `type`;
 CREATE TABLE `type` (
@@ -88,7 +111,15 @@ CREATE TABLE `type` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for type_ass
+-- Records of type
+-- ----------------------------
+INSERT INTO `type` VALUES ('3', '二手');
+INSERT INTO `type` VALUES ('1', '同行');
+INSERT INTO `type` VALUES ('4', '组队');
+INSERT INTO `type` VALUES ('2', '购物');
+
+-- ----------------------------
+-- Table structure for `type_ass`
 -- ----------------------------
 DROP TABLE IF EXISTS `type_ass`;
 CREATE TABLE `type_ass` (
@@ -101,30 +132,8 @@ CREATE TABLE `type_ass` (
 ) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records 
+-- Records of type_ass
 -- ----------------------------
-INSERT INTO `account` VALUES ('1', 'test', 'test', '18787878777', 'test@qq.com', 'F');
-INSERT INTO `post` VALUES ('1', '0', null, '2017-07-26 23:47:05', null, null, 'title', null, null);
-INSERT INTO `post` VALUES ('2', '0', null, '2017-07-26 23:47:05', null, null, 'title', null, null);
-INSERT INTO `post` VALUES ('3', '0', 'contactway', '2017-07-26 23:47:05', null, null, 'title', 'contactway', null);
-INSERT INTO `post` VALUES ('4', '0', 'contactway', '2017-07-26 23:47:06', 'tag1', null, 'title', 'contactway', null);
-INSERT INTO `post` VALUES ('5', '0', 'contactway', '2017-07-26 23:47:06', 'tag1', 'tag2', 'title', 'contactway', null);
-INSERT INTO `post` VALUES ('6', '0', 'contactway', '2017-07-26 23:47:06', 'tag1', 'tag2', 'title', 'contactway', null);
-INSERT INTO `post` VALUES ('7', '0', 'ssdfsdf', '2017-07-26 23:51:41', '同行', '北京', 'fasdfasdf', 'ssdfsdf', 'F:\\java\\myWorkspace1\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp1\\wtpwebapps\\pintuan2.0\\WEB-INF\\upload\\banner.jpg');
-INSERT INTO `post` VALUES ('8', '0', 'asdasdsadas', '2017-07-26 23:52:43', '同行', '北京', 'asdadadasdsadsad', 'asdasdsadas', 'F:\\java\\myWorkspace1\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp1\\wtpwebapps\\pintuan2.0\\WEB-INF\\upload\\banner.jpg');
-INSERT INTO `post` VALUES ('9', '0', 'asdasdsadas', '2017-07-26 23:53:00', '同行', '北京', 'asdadadasdsadsad', 'asdasdsadas', 'F:\\java\\myWorkspace1\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp1\\wtpwebapps\\pintuan2.0\\WEB-INF\\upload\\banner.jpg');
-INSERT INTO `post` VALUES ('10', '0', 'asdsad', '2017-07-26 23:55:22', '同行', '北京', 'asdasdasd', 'asdsad', null);
-INSERT INTO `post` VALUES ('11', '0', 'asdasdsad', '2017-07-26 23:55:42', '同行', '河南', 'asdasdas', 'asdasdsad', 'F:\\java\\myWorkspace1\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp1\\wtpwebapps\\pintuan2.0\\WEB-INF\\upload\\banner.jpg');
-INSERT INTO `post` VALUES ('12', '0', '15878787878', '2017-07-27 00:00:38', '购物', '女装', '测试信息', '15878787878', 'F:\\java\\myWorkspace1\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp1\\wtpwebapps\\pintuan2.0\\WEB-INF\\upload\\banner.jpg');
-INSERT INTO `post` VALUES ('13', '0', '158', '2017-07-27 00:03:31', '0', '--选择副标签--', '测试信息', '158', null);
-INSERT INTO `post` VALUES ('14', '0', '15878787878', '2017-07-27 00:03:51', '购物', '女装', '测试信息', '15878787878', null);
-INSERT INTO `post` VALUES ('15', '0', '15878787878', '2017-07-27 00:05:27', '购物', '女装', '呵呵呵呵呵呵', '15878787878', 'F:\\java\\myWorkspace1\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp1\\wtpwebapps\\pintuan2.0\\WEB-INF\\upload\\banner.jpg');
-INSERT INTO `post` VALUES ('16', '1', '15878787875', '2017-07-27 01:31:08', '购物', '美妆', '二手测试', '二手测试测二手测试测', 'F:\\java\\myWorkspace1\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp1\\wtpwebapps\\pintuan2.0\\WEB-INF\\upload\\banner.jpg');
-INSERT INTO `post` VALUES ('17', '1', '15878787878', '2017-07-27 01:32:17', '二手', '女装', '二手测试', '二手测试测二手测试测二手测试测二手测试', null);
-INSERT INTO `type` VALUES ('3', '二手');
-INSERT INTO `type` VALUES ('1', '同行');
-INSERT INTO `type` VALUES ('4', '组队');
-INSERT INTO `type` VALUES ('2', '购物');
 INSERT INTO `type_ass` VALUES ('1', '1', '北京');
 INSERT INTO `type_ass` VALUES ('2', '1', '天津');
 INSERT INTO `type_ass` VALUES ('3', '1', '上海');

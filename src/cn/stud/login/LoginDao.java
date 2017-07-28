@@ -62,7 +62,7 @@ public class LoginDao {
 					Class.forName(name);//指定连接类型  
 		            con = DriverManager.getConnection(url, user, password);//获取连接  
 		            System.out.println("链接成功");
-					//生成sdql执行对象
+					//生成sql执行对象
 					PreparedStatement pst = 
 							con.prepareStatement(sql);
 					pst.setString(1,id);

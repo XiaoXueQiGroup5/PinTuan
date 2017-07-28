@@ -56,7 +56,7 @@
 			<p style="font-size: 24px;text-align: center;">${user.name }</p>
 	        <a href="userInfo.jsp"><font size=5>个人信息</font></a>
 	    	</br></br>
-	    	<a href="myPostList.jsp"><font size=5>我的发布</font></a>
+	    	<a href="${adminPath }/login?method=getMine&tId=${user.id}"><font size=5>我的发布</font></a>
 	    	</br></br>
 	    	<a href="post.jsp"><font size=5>发布信息</font></a>
 	   </div>
@@ -88,29 +88,19 @@
     <script src="js/signinDialog.js"></script>
    </c:if>
         
-    <!--导航栏-->  
-    <div class="navigationBar">
-    	<table cellspacing="20">
-    		<tr><td><a href="${adminPath }/login?method=postList&tag=0">最新</a></td></tr>
-    		<tr><td><a href="${adminPath }/login?method=postList&tag=1">同行</a></td></tr>
-			<tr><td><a href="${adminPath }/login?method=postList&tag=2">购物</a></td></tr>
-			<tr><td><a href="${adminPath }/login?method=postList&tag=3">二手</a></td></tr>
-			<tr><td><a href="${adminPath }/login?method=postList&tag=4">组队</a></td></tr>
-		</table>
-    </div> 
     
     <!--我的发布-->  
-    <div style="position:absolute;top: 100px; left: 200px; width:80%; overflow: auto;">
+    <div style="position:absolute;top: 100px; left: 100px; width:90%; overflow: auto;">
     	<table cellspacing="20" width="80%">
     		<tr>
-    			<th width="10%">标题</th>
-   				<th width="10%">标签</th>
-   				<th width="10%">副标签</th>
-   				<th width="13%">联系方式</th>
-   				<th width="27%">内容</th>
-   				<th width="10%">图片</th>
-   				<th width="13%">发布日期</th>
-   				<th width="7%">操作</th>
+    			<th width="10%" align="left">标题</th>
+   				<th width="10%" align="left">标签</th>
+   				<th width="10%" align="left">副标签</th>
+   				<th width="12%" align="left">联系方式</th>
+   				<th width="26%" align="left">内容</th>
+   				<th width="10%" align="left">图片</th>
+   				<th width="12%" align="left">发布日期</th>
+   				<th width="10%" align="left">操作</th>
    			</tr>
     		<c:forEach items="${postList }" var="post">
     			<tr>
@@ -119,7 +109,12 @@
     				<td>${post.PTag2}</td>
     				<td>${post.PTelephone}</td>
     				<td>${post.PDescription}</td>
-    				<td><img src="${post.picUrl}" width="50px" height="50px"></td>
+    				<c:if test="${post.picUrl=='noPic' }">
+    				<td></td>
+    				</c:if>
+    				<c:if test="${post.picUrl!='noPic' }">
+    				<td><img src="<%=request.getContextPath() %>/upload/${post.picUrl}" width="50px" height="50px"></td>
+    				</c:if>
     				<td>${post.PDate}</td>
     				<td><a href="${adminPath }/login?method=delPost&id=${post.AId}">删除</a></td>
     			</tr>

@@ -100,7 +100,7 @@
     </div>  
         
     <!--信息栏-->  
-    <div style="position:absolute;top: 100px; left:200px; width:80%; overflow: auto;">
+    <div style="position:absolute;top: 100px; left:170px; width:80%; overflow: auto;">
     	<table cellspacing="20" width="80%">
     		
     		<tr>
@@ -120,7 +120,14 @@
     				<td>${post.PTag2}</td>
     				<td>${post.PTelephone}</td>
     				<td>${post.PDescription}</td>
-    				<td><img src="${post.picUrl}" width="50px" height="50px"></td>		
+    				<!--<td><img src="${post.picUrl}" width="50px" height="50px"></td>-->
+    				<c:if test="${post.picUrl=='noPic' }">
+    				<td></td>
+    				</c:if>
+    				<c:if test="${post.picUrl!='noPic' }">
+    				<td><img src="<%=request.getContextPath() %>/upload/${post.picUrl}" width="50px" height="50px"></td>
+    				</c:if>
+    				
     				<td>${post.PDate}</td>
     			</tr>
     		</c:forEach>

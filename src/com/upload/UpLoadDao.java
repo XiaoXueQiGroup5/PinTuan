@@ -112,7 +112,7 @@ public class UpLoadDao {
             System.out.println("链接成功");
 			PreparedStatement pst = 
 					con.prepareStatement("insert into post (A_id,Ts_id,P_telephone,P_tag,P_tag2,P_title,P_description,P_date,Pic_url) values(?,?,?,?,?,?,?,?,?)");
-			pst.setInt(1,p.getAId());
+			pst.setInt(1, p.getAId());
 			pst.setInt(2, p.getTsId());
 			pst.setString(3,p.getPTelephone());
 			pst.setString(4, p.getPTag());
@@ -122,6 +122,9 @@ public class UpLoadDao {
 			pst.setString(8, p.getPDate());
 			pst.setString(9, p.getPicUrl());
 			pst.executeUpdate();
+			
+			
+			
 		}catch(Exception e){
 			throw new RuntimeException(e);
 		}finally{
